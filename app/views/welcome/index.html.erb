@@ -1,0 +1,27 @@
+<div class="pb-2 mt-4 mb-2 border-bottom">
+  <h1 class="text-center display-2">Hog's Burger Blog</h1>
+</div>
+
+
+<% @posts.each do |post| %>
+  <div class="container pb-2 border-bottom">
+    <div class="row ml-0">
+      <h2 class="display-4 pr-4">
+        <%= post.title %>
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <%= image_tag(post.image, class: "rounded img-fluid") %>
+      </div>
+      <div class="col-8 mt-6">
+        <div class="row">
+          <p><%= post.text %></p>
+        </div>
+        <div class="row">
+          <%= display_rating(post) %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
