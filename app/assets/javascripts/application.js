@@ -17,3 +17,10 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// Workaround for displaying selected file
+$(document).on('ready turbolinks:load', function() {
+  $('.custom-file-input').change(function(){
+    $('.custom-file-label').text(this.value);
+  });
+});
