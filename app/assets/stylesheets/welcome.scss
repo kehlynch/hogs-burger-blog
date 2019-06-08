@@ -2,9 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .container-fluid:nth-of-type(even) {
-//   background-color: #dcdcdc;
-// }
-// .container-fluid:nth-of-type(odd) {
-//   background-color: #aaaaaa;
-// }
+.post:nth-of-type(even) {
+  background-color: rgba(0, 153, 204, 0.2);
+}
+
+.post:nth-of-type(odd) {
+  background-color: rgba(51, 102, 0, 0.2);
+}
+
+.post-image, .post-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.burger-title {
+  display: none;
+}
+
+.post-details {
+  margin-top: 2rem;
+}
+
+@include media-breakpoint-up(sm) {
+  .burger-title {
+    display: inline-block;
+  }
+
+  .post-details {
+    margin-top: 0;
+  }
+}

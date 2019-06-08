@@ -21,7 +21,7 @@
 // Workaround for displaying selected file
 $(document).on('ready turbolinks:load', function() {
   $('.custom-file-input').change(function(){
-    const filename = this.value.replace("C:\\fakepath\\", "");
+    var filename = this.value.replace("C:\\fakepath\\", "");
     $('.custom-file-label').text(filename);
   });
 });

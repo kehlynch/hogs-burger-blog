@@ -1,23 +1,14 @@
 module WelcomeHelper
-  def display_post(post, index)
-    tag = content_tag(:div, class: "row") do
-      if index % 2 == 0
-        [img_column(post), post_column(post)].join.html_safe
-      else
-        [post_column(post), img_column(post)].join.html_safe
-      end
-    end
-
-    puts tag.inspect
-    tag
-  end
-
   def display_rating(post)
     post.rating.times.collect do
-      content_tag(:div, class: "col-1 pr-0 pl-0") do
-        image_tag("burger.png", class: "img-fluid")
+      content_tag(:span, class: "col-1 pr-0 pl-0") do
+        burger()
       end
     end.join.html_safe
+  end
+
+  def burger
+    image_tag("burger.png", class: "img-fluid")
   end
 
   private
