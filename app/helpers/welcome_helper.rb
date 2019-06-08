@@ -1,6 +1,5 @@
 module WelcomeHelper
   def display_post(post, index)
-    puts post.inspect
     tag = content_tag(:div, class: "row") do
       if index % 2 == 0
         [img_column(post), post_column(post)].join.html_safe
