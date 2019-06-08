@@ -66,3 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "aws-sdk-s3", require: false
 gem "bootstrap_form", ">= 4.2.0"
+
+gem 'redcarpet', '~> 3.0.0'

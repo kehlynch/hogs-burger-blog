@@ -10,7 +10,6 @@
   </h1>
 </div>
 
-
 <% @posts.each do |post| %>
   <div class="container-fluid post pt-4 pb-4">
     <div class="container pb-2 border-bottom">
@@ -22,7 +21,7 @@
           <h2 class="border-bottom">
             <%= post.title %>
           </h2>
-          <p><%= post.text %></p>
+          <p><%= markdown(post.text) %></p>
           <p><%= display_rating(post) %></p>
         </div>
       </div>
