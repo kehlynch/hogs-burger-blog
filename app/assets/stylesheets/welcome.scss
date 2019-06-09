@@ -49,20 +49,24 @@
   left: -3px;
 }
 
-.search-form {
+.search-button {
   display: none;
 }
 
+
 @include media-breakpoint-up(sm) {
+  .search-form {
+    margin-left: auto;
+  }
+
+  .search-button {
+    display: inline-block;
+  }
   .burger-title {
     display: inline-block;
   }
 
   .post-details {
     margin-top: 0;
-  }
-
-  .search-form {
-    display: inline-block;
   }
 }

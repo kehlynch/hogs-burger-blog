@@ -21,8 +21,9 @@ module WelcomeHelper
     }
     dir = column == sort_column ? sort_direction : ""
     next_dir = next_dir_lookup[dir]
+    classname = dir == "" ? "none" : dir
     puts next_dir
-    link_to("#{title} <span class='sort-icon #{dir}'></span>".html_safe, {column: column, direction: next_dir, search: search}, class: "nav-link nav-link-sort")
+    link_to("#{title} <span class='sort-icon #{classname}'></span>".html_safe, {column: column, direction: next_dir, search: search}, class: "nav-link nav-link-sort")
   end
 
   def display_date(post)
