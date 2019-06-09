@@ -25,7 +25,7 @@
 }
 
 .post-rating {
-  margin-top: 2rem;
+  margin-left: 0;
 }
 
 .burger-icon {
@@ -49,6 +49,10 @@
   left: -3px;
 }
 
+.search-form {
+  width: 100%;
+}
+
 .search-button {
   display: none;
 }
@@ -57,16 +61,26 @@
 @include media-breakpoint-up(sm) {
   .search-form {
     margin-left: auto;
+    width: auto;
   }
 
   .search-button {
     display: inline-block;
   }
+
   .burger-title {
     display: inline-block;
   }
 
   .post-details {
     margin-top: 0;
+  }
+
+  .post-rating {
+    margin-left: 0;
+  }
+
+  .post-image {
+    margin-bottom: 1.5rem;
   }
 }

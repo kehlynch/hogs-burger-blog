@@ -13,8 +13,8 @@
   <%= form_tag(welcome_index_path, method: :get, class: "form-inline search-form") do %>
     <%= hidden_field_tag :column , params[:column] %>
     <%= hidden_field_tag :direction , params[:direction] %>
-    <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2") %>
-    <%= submit_tag("Search", class: "btn btn-success search-button") %>
+    <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2", placeholder: "search") %>
+    <%= submit_tag("Go", class: "btn btn-success search-button") %>
   <% end %>
 </nav>
 
@@ -43,10 +43,10 @@
           </h2>
           <p class="text-muted"><%= display_date(post) %></p>
           <p><%= markdown(post.text) %></p>
+          <div class="row post-rating">
+            <%= display_rating(post) %>
+          </div>
         </div>
-      </div>
-      <div class="row ml-2 post-rating">
-        <%= display_rating(post) %>
       </div>
     </div>
   </div>
