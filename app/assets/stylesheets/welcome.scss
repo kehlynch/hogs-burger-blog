@@ -24,6 +24,35 @@
   margin-top: 2rem;
 }
 
+.post-rating {
+  margin-top: 2rem;
+}
+
+.burger-icon {
+  max-width: 43px;
+}
+
+.sort-icon {
+  @extend .glyphicon;
+  position: relative;
+}
+
+.sort-icon.asc {
+  @extend .glyphicon-chevron-up;
+  top: 1px;
+  left: -2px;
+}
+
+.sort-icon.desc {
+  @extend .glyphicon-chevron-down;
+  top: 4px;
+  left: -3px;
+}
+
+.search-form {
+  display: none;
+}
+
 @include media-breakpoint-up(sm) {
   .burger-title {
     display: inline-block;
@@ -31,5 +60,9 @@
 
   .post-details {
     margin-top: 0;
+  }
+
+  .search-form {
+    display: inline-block;
   }
 }

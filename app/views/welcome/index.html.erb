@@ -1,4 +1,24 @@
-<div class="pb-2 mt-4 mb-2">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Hog's Burger Blog</a>
+    </li>
+    <li class="nav-item">
+      <%= sort_link("rating") %>
+    </li>
+    <li class="nav-item">
+      <%= sort_link("updated_at", "date") %>
+    </li>
+  </ul>
+  <%= form_tag(welcome_index_path, method: :get, class: "form-inline ml-auto search-form") do %>
+    <%= hidden_field_tag :column , params[:column] %>
+    <%= hidden_field_tag :direction , params[:direction] %>
+    <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2") %>
+    <%= submit_tag("Search", class: "btn btn-success") %>
+  <% end %>
+</nav>
+
+<div class="container-fluid pb-2 mt-4 mb-2">
   <h1 class="text-center">
     <span class="burger-title">
       <%= burger() %>
@@ -21,9 +41,12 @@
           <h2 class="border-bottom">
             <%= post.title %>
           </h2>
+          <p class="text-muted"><%= display_date(post) %></p>
           <p><%= markdown(post.text) %></p>
-          <p><%= display_rating(post) %></p>
         </div>
+      </div>
+      <div class="row ml-2 post-rating">
+        <%= display_rating(post) %>
       </div>
     </div>
   </div>
