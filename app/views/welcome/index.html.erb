@@ -20,11 +20,11 @@
 
 <div class="container-fluid pb-2 mt-4 mb-2">
   <h1 class="text-center">
-    <span class="burger-title">
+    <span class="burger-icon-title">
       <%= burger() %>
     </span>
     Hog's Burger Blog
-    <span class="burger-title">
+    <span class="burger-icon-title">
       <%= burger() %>
     </span>
   </h1>
@@ -35,10 +35,12 @@
     <div class="container pb-2 border-bottom">
       <div class="row">
         <div class="col-12 col-sm-4 post-image">
-          <%= image_tag(post.image, class: "rounded img-fluid") if post.image.attached? %>
+          <div>
+            <%= image_tag(post.image, class: "rounded img-fluid") if post.image.attached? %>
+          </div>
         </div>
         <div class="col-12 col-sm-8 mt-6 post-details">
-          <h2 class="border-bottom">
+          <h2 class="border-bottom post-title">
             <%= post.title %>
           </h2>
           <p class="text-muted"><%= display_date(post) %></p>

@@ -10,18 +10,17 @@
   background-color: rgba(51, 102, 0, 0.2);
 }
 
-.post-image, .post-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.burger-title {
+.burger-icon-title {
   display: none;
 }
 
+.post-image, .post-details {
+  display: flex;
+}
+
 .post-details {
-  margin-top: 2rem;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
 .post-rating {
@@ -68,12 +67,16 @@
     display: inline-block;
   }
 
-  .burger-title {
+  .burger-icon-title {
     display: inline-block;
   }
 
-  .post-details {
+  .post-image, .post-details {
     margin-top: 0;
+  }
+
+  .post-title {
+    margin-top: -0.5rem;
   }
 
   .post-rating {
