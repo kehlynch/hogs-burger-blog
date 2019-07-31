@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get 'welcome/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/', to: 'welcome#index', as: 'main'
 
   scope '/admin' do
     resources :posts, except: :show do
@@ -8,6 +10,4 @@ Rails.application.routes.draw do
     end
     root 'posts#index'
   end
-
-  root 'welcome#index'
 end

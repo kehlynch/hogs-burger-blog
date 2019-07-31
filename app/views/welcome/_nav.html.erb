@@ -10,7 +10,7 @@
       <%= sort_link("updated_at", "date") %>
     </li>
   </ul>
-  <%= form_tag(welcome_index_path, method: :get, class: "form-inline search-form") do %>
+  <%= form_tag(main_path, method: :get, class: "form-inline search-form") do %>
     <%= hidden_field_tag :column , params[:column] %>
     <%= hidden_field_tag :direction , params[:direction] %>
     <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2", placeholder: "search") %>
