@@ -1,0 +1,23 @@
+<div class="container-fluid post pt-4 pb-4">
+  <div class="container pb-2 border-bottom">
+    <div class="row">
+      <div class="col-12 col-sm-4 post-image">
+        <div>
+          <%= image_tag(post.image, class: "rounded img-fluid") if post.image.attached? %>
+        </div>
+      </div>
+      <div class="col-12 col-sm-8 mt-6 post-details">
+        <h2 class="border-bottom post-title">
+          <%= post.title %>
+        </h2>
+        <p class="text-muted"><%= display_date(post) %></p>
+        <p><%= markdown(post.text) %></p>
+        <div class="row post-rating">
+          <%= display_rating(post) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'comments/index', comments: post.comments %>
+<%= render 'comments/create', post: post %>

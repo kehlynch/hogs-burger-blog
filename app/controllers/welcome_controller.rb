@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
+# welcome controller
 class WelcomeController < ApplicationController
   helper_method :sort_column, :sort_direction, :search
 
   def index
-    # if sort_direction
-    #   @posts = Post.order("#{sort_column} #{sort_direction}")
-    # end
     @posts = Post.search(params[:search])
-    if sort_direction != ""
+    if sort_direction != ''
       @posts = @posts.order("#{sort_column} #{sort_direction}")
     end
+    puts "***Comments***"
+    p @posts.map(&:comments)
     @posts
   end
 
@@ -19,17 +21,17 @@ class WelcomeController < ApplicationController
   private
 
   def sortable_columns
-    ["rating", "updated_at"]
+    %w[rating updated_at]
   end
 
   def sort_column
-    sortable_columns.include?(params[:column]) ? params[:column] : "rating"
+    sortable_columns.include?(params[:column]) ? params[:column] : 'rating'
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : ""
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : ''
   end
-  
+
   def search
     params[:search]
   end

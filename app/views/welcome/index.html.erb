@@ -1,22 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Hog's Burger Blog</a>
-    </li>
-    <li class="nav-item">
-      <%= sort_link("rating") %>
-    </li>
-    <li class="nav-item">
-      <%= sort_link("updated_at", "date") %>
-    </li>
-  </ul>
-  <%= form_tag(welcome_index_path, method: :get, class: "form-inline search-form") do %>
-    <%= hidden_field_tag :column , params[:column] %>
-    <%= hidden_field_tag :direction , params[:direction] %>
-    <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2", placeholder: "search") %>
-    <%= submit_tag("Go", class: "btn btn-success search-button") %>
-  <% end %>
-</nav>
+<%= render 'nav' %>
 
 <div class="container-fluid pb-2 mt-4 mb-2">
   <h1 class="text-center">
@@ -30,26 +12,6 @@
   </h1>
 </div>
 
-<% @posts.each do |post| %>
-  <div class="container-fluid post pt-4 pb-4">
-    <div class="container pb-2 border-bottom">
-      <div class="row">
-        <div class="col-12 col-sm-4 post-image">
-          <div>
-            <%= image_tag(post.image, class: "rounded img-fluid") if post.image.attached? %>
-          </div>
-        </div>
-        <div class="col-12 col-sm-8 mt-6 post-details">
-          <h2 class="border-bottom post-title">
-            <%= post.title %>
-          </h2>
-          <p class="text-muted"><%= display_date(post) %></p>
-          <p><%= markdown(post.text) %></p>
-          <div class="row post-rating">
-            <%= display_rating(post) %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<% @posts.each_with_index do |post, i| %>
+  <%= render 'post', post: post %>
 <% end %>
