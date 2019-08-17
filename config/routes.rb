@@ -2,11 +2,15 @@
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/', to: 'welcome#index', as: 'main'
+  get '/', to: 'home#index', as: 'home'
 
-  scope '/admin' do
+  resources :posts, only: :index do
+    resources :comments, only: :create
+  end
+
+  namespace :admin do
     resources :posts, except: :show do
-      resources :comments, except: :show
+      resources :comments, only: [:index, :destroy]
     end
     root 'posts#index'
   end

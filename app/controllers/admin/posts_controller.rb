@@ -1,5 +1,4 @@
-class PostsController < ApplicationController
-
+class Admin::PostsController < ApplicationController
   include HttpAuthConcern
 
   def index

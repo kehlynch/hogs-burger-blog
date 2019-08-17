@@ -14,19 +14,6 @@
   display: none;
 }
 
-.post-image, .post-details {
-  display: flex;
-}
-
-.post-details {
-  flex-direction: column;
-  margin-top: 1rem;
-}
-
-.post-rating {
-  margin-left: 0;
-}
-
 .burger-icon {
   max-width: 43px;
 }
@@ -55,7 +42,6 @@
 .search-button {
   display: none;
 }
-
 
 @include media-breakpoint-up(sm) {
   .search-form {

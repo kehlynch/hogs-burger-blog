@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
-# welcome controller
-class WelcomeController < ApplicationController
+class HomeController < ApplicationController
   helper_method :sort_column, :sort_direction, :search
 
   def index
@@ -9,8 +6,6 @@ class WelcomeController < ApplicationController
     if sort_direction != ''
       @posts = @posts.order("#{sort_column} #{sort_direction}")
     end
-    puts "***Comments***"
-    p @posts.map(&:comments)
     @posts
   end
 

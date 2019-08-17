@@ -1,14 +1,11 @@
-<h2>Add a comment:</h2>
-<%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<%= form_with(model: [ post, post.comments.build ], local: true, class: "comment-form row", id: "comment_form") do |form| %>
+    <div class="col-12">
+      <%= form.text_area :body, placeholder: 'Comment' %>
+    </div>
+    <div class="col-7 col-sm-7">
+      <%= form.text_field :commenter, placeholder: 'name', class: "commenter-input" %>
+    </div>
+    <div class="col-5 col-sm-5 add-comment-container">
+      <%= form.submit "Add Comment" %>
+    </div>
 <% end %>

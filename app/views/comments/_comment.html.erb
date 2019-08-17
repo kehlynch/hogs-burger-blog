@@ -1,15 +1,11 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
- 
-<p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="row mt-2 mb-2 justify-content-between comment">
+  <div class="col-8">
+    <p class="text-muted"><%= comment.commenter %></p>
+  </div>
+  <div class="col-4">
+    <p class="text-muted comment-date"><%= display_date(comment) %></p>
+  </div>
+  <div class="col-12">
+    <p><%= comment.body %></p>
+  </div>
+</div>

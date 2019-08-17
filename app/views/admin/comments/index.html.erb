@@ -1,0 +1,25 @@
+<div class="container pb-2 mt-4 mb-2 border-bottom">
+  <h1>HogsBurgerBlog admin</h1>
+</div>
+<div class="container">
+  <h2>Comments for post <%= link_to @post.title, edit_admin_post_path(@post) %></h2>
+  <table class="table" />
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+      <th></th>
+    </tr>
+
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.commenter %></td>
+        <td><%= comment.body %></td>
+        <td>
+          <%= link_to 'X', admin_post_comment_path(@post, comment), class: "btn btn-danger btn-xs",
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+      </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

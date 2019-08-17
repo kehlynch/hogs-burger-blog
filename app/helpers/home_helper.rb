@@ -1,4 +1,4 @@
-module WelcomeHelper
+module HomeHelper
   def display_rating(post)
     post.rating.times.collect do
       content_tag(:div, class: "col-1 pr-0 pl-0 burger-icon") do

@@ -1,4 +1,4 @@
-<%= bootstrap_form_with model: @post, local: true do |form| %>
+<%= bootstrap_form_with model: @post, local: true, url: admin_post_path do |form| %>
  
   <% if @post.errors.any? %>
     <div id="error_explanation">
