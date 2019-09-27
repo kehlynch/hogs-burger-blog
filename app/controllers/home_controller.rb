@@ -5,6 +5,8 @@ class HomeController < ApplicationController
     @posts = Post.search(params[:search])
     if sort_direction != ''
       @posts = @posts.order("#{sort_column} #{sort_direction}")
+    else
+      @posts = @posts.order("updated_at desc")
     end
     @posts
   end
