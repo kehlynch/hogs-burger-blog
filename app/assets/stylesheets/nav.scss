@@ -1,0 +1,13 @@
+.search-form {
+  margin: 10px 0px;
+}
+
+.navbar {
+  align-items: flex-start;
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar {
+    align-items: center;
+  }
+}
