@@ -3,6 +3,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
     create_table :questions do |t|
       t.string :author
       t.text :body
+      t.text :answer
 
       t.timestamps
     end
@@ -11,7 +12,6 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.string :commenter
       t.text :body
       t.references :question, foreign_key: true
-      t.boolean :by_the_hog, default: false
 
       t.timestamps
     end

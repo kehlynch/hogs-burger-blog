@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:index, :destroy]
     end
     
-    resources :questions, only: [:index, :destroy] do
+    resources :questions, only: [:index, :destroy, :edit, :update] do
       resources :question_comments, only: [:index, :create, :destroy]
     end
   end

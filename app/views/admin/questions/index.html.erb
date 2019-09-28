@@ -1,22 +1,29 @@
 <div class="container">
 <table class="table" />
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Question</th>
+    <th>Answer</th>
     <th></th>
+
   </tr>
 
   <% @questions.each do |question| %>
     <tr>
       <td><p class="text-secondary"><%= question.body %></p></td>
+      <td><p class="text-secondary"><%= question.answer %></p></td>
       <td>
         <%= link_to "#{question.question_comments.length} comments", admin_question_question_comments_path(question) %>
+      </td>
+      <td>
+        <%= link_to 'Add/edit answer',
+            edit_admin_question_path(question),
+            class: 'btn btn-primary btn-xs' %>
       </td>
       <td>
         <%= link_to 'X', admin_question_path(question), class: "btn btn-danger btn-xs",
           method: :delete,
           data: { confirm: 'Are you sure?' } %>
-    </td>
+      </td>
     </tr>
   <% end %>
 </table>

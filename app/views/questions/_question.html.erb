@@ -1,9 +1,25 @@
 <div class="container-fluid question pt-4 pb-4">
   <div class="container pb-2 border-bottom">
+    <div class="row mb-4">
+      <div class="col-12 col-sm-8 mt-6">
+      <div class="card question-card">
+        <div class="card-body">
+          <h5 class="card-title"><%= question.author %> asked</h5>
+          <p class="card-subtitle mb-2 text-muted"><%= display_date(question) %></p>
+          <p class="card-text">
+            <%= markdown(question.body) %>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-12 col-sm-8 mt-6 question-details">
-        <p class="text-muted"><%= display_date(question) %></p>
-        <p><%= markdown(question.body) %></p>
+      <div class="col-12 col-sm-8 mt-6">
+        <% if question.answer %>
+          <%= render 'questions/answer', answer: question.answer %>
+        <% else %>
+          <%= render 'questions/no_answer' %>
+        <% end %>
       </div>
     </div>
     <div class="row mt-4">

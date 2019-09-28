@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2019_09_27_213657) do
     t.string "commenter"
     t.text "body"
     t.bigint "question_id"
-    t.boolean "by_the_hog", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_question_comments_on_question_id"
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_213657) do
   create_table "questions", force: :cascade do |t|
     t.string "author"
     t.text "body"
+    t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

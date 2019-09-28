@@ -45,7 +45,7 @@ button.toggle-question_comments-button[aria-expanded="true"] > span {
 }
 
 #question_comment_form input[type="submit"]:active, .toggle-question_comments-button {
-	border: 1px solid #999;
+	border: 1px solid;
 }
 
 #question_comment_form div {

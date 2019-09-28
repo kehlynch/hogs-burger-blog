@@ -1,13 +1,13 @@
-<%= bootstrap_form_for [:admin, @post] do |form| %>
+<%= bootstrap_form_for [:admin, @question] do |form| %>
  
-  <% if @post.errors.any? %>
+  <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@post.errors.count, "error") %> prohibited
-        this post from being saved:
+        <%= pluralize(@question.errors.count, "error") %> prohibited
+        this question from being saved:
       </h2>
       <ul>
-        <% @post.errors.full_messages.each do |msg| %>
+        <% @question.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -15,11 +15,11 @@
   <% end %>
  
   <p>
-    <%= form.text_field :title %>
+    <%= @question.body %>
   </p>
  
   <p>
-    <%= form.text_area :body %>
+    <%= form.text_area :answer %>
     <p class="hint-block">
       You can use markdown in here <strong>**bold like this**</strong> <em>*italic like this*</em>
       <a href="https://www.markdownguide.org/basic-syntax/" target="_blank">
@@ -28,13 +28,6 @@
     </p>
   </p>
 
-  <p>
-    <%= form.select :rating, (0..10).to_a.map{|n| [n, n]} %>
-  </p>
-
-
-  <%= form.file_field :image %>
- 
   <p>
     <%= form.submit %>
   </p>

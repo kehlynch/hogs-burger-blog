@@ -6,6 +6,6 @@
     <p class="text-muted comment-date"><%= display_date(comment) %></p>
   </div>
   <div class="col-12">
-    <p><%= comment.body %></p>
+    <p><%= markdown(comment.body) %></p>
   </div>
 </div>
