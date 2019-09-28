@@ -14,6 +14,7 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import 'bootstrap/glyphicons';
-@import "home";
 @import "posts";
 @import "comments";
+@import "questions";
+@import "question_comments";

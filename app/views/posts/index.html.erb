@@ -1,0 +1,5 @@
+<%= render 'layouts/nav', search_path: posts_path %>
+
+<% @posts.each_with_index do |post, i| %>
+  <%= render 'post', post: post %>
+<% end %>

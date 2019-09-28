@@ -1,4 +1,4 @@
-module HomeHelper
+module PostsHelper
   def display_rating(post)
     post.rating.times.collect do
       content_tag(:div, class: "col-1 pr-0 pl-0 burger-icon") do
@@ -11,17 +11,8 @@ module HomeHelper
     image_tag("burger.png", class: "img-fluid")
   end
 
-  def sort_link(column, title = nil)
-    title ||= column
-    next_dir_lookup = {
-      "" => "asc",
-      "asc" => "desc",
-      "desc" => ""
-    }
-    dir = column == sort_column ? sort_direction : ""
-    next_dir = next_dir_lookup[dir]
-    classname = dir == "" ? "none" : dir
-    link_to("#{title} <span class='sort-icon #{classname}'></span>".html_safe, {column: column, direction: next_dir, search: search}, class: "nav-link nav-link-sort")
+  def burger_colour
+    image_tag("burger-colour.png", class: "img-fluid")
   end
 
   def display_date(post)

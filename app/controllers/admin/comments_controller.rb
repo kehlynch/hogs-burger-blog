@@ -1,4 +1,4 @@
-class Admin::CommentsController < ApplicationController
+class Admin::CommentsController < Admin::BaseController
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments

@@ -2,6 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.burger-icon-title {
+  display: none;
+}
+
+.burger-icon {
+  max-width: 43px;
+}
+
+.burger-icon-nav {
+  max-width: 40px;
+}
+
+.search-form {
+}
+
+.search-button {
+  display: none;
+}
+
+@include media-breakpoint-up(sm) {
+  .search-form {
+    max-width: 680px;
+  }
+
+  .search-button {
+    display: inline-block;
+  }
+
+  .burger-icon-title {
+    display: inline-block;
+  }
+}
+.post:nth-of-type(even) {
+  background-color: rgba(0, 153, 204, 0.2);
+}
+
+.post:nth-of-type(odd) {
+  background-color: rgba(51, 102, 0, 0.2);
+}
+
 .post-image, .post-details {
   display: flex;
 }

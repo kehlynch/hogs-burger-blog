@@ -69,3 +69,5 @@ gem "bootstrap_form", ">= 4.2.0"
 
 gem 'redcarpet', '~> 3.0.0'
 gem 'bootstrap-glyphicons'
+
+gem 'active_link_to'

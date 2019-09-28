@@ -1,0 +1,3 @@
+<% question_comments.select { |c| c.id != nil }.each do |question_comment| %>
+  <%= render 'question_comments/question_comment', question_comment: question_comment %>
+<% end %>

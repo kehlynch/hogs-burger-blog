@@ -1,0 +1,15 @@
+<%= render 'layouts/nav', search_path: questions_path %>
+
+<div class="container-fluid pt-4 pb-4 new-question-wrapper">
+  <div class="container pb-2">
+    <div class="row">
+      <div class="col-12 new-question-container">
+        <%= render 'questions/create' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @questions.each_with_index do |question, i| %>
+  <%= render 'question', question: question %>
+<% end %>

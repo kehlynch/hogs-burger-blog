@@ -1,0 +1,64 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.question:nth-of-type(even) {
+  background-color: rgba(0, 153, 204, 0.2);
+}
+
+.question:nth-of-type(odd), .new-question-wrapper {
+  background-color: rgba(51, 102, 0, 0.2);
+}
+
+.question-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  .question-details {
+    margin-top: 0;
+  }
+
+  .question-title {
+    margin-top: -0.5rem;
+  }
+}
+
+.new-question-container {
+}
+
+#question_form input, #question_form textarea {
+  background-color: white;
+  border: 1px solid;
+	padding: 8px 10px;
+	border-radius: 5px;
+	outline: 0;
+  font-size: small;
+}
+
+#question_form input[type="submit"]:active {
+	border: 1px solid #999;
+}
+
+
+#question_form textarea {
+  width: 100%;
+	max-width: 690px;
+}
+
+#question_form input[type="submit"]:active, .toggle-questions-button {
+	border: 1px solid #999;
+}
+
+#question_form div {
+	margin-bottom: 8px;
+}
+
+@include media-breakpoint-up(sm) {
+  .new-question-container {
+    width: 100%;
+    max-width: 690px;
+  }
+}

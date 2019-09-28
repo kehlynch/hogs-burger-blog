@@ -1,0 +1,30 @@
+<div class="container pb-2 mt-4 mb-2 border-bottom">
+  <h1>HogsBurgerBlog admin</h1>
+</div>
+<div class="container">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Question Comments</h5>
+    <p class="card-text"><%= @question.body %></p>
+  </div>
+  </div>
+  <table class="table" />
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+      <th></th>
+    </tr>
+
+    <% @question_comments.each do |question_comment| %>
+      <tr>
+        <td><%= question_comment.commenter %></td>
+        <td><%= question_comment.body %></td>
+        <td>
+          <%= link_to 'X', admin_question_question_comment_path(@question, question_comment), class: "btn btn-danger btn-xs",
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+      </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_131806) do
+ActiveRecord::Schema.define(version: 2019_09_27_213657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,24 @@ ActiveRecord::Schema.define(version: 2019_06_08_131806) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "question_comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.bigint "question_id"
+    t.boolean "by_the_hog", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_comments_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "author"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
+  add_foreign_key "question_comments", "questions"
 end

@@ -1,0 +1,11 @@
+<div class="row mt-2 mb-2 justify-content-between question_comment">
+  <div class="col-8">
+    <p class="text-muted"><%= question_comment.commenter %></p>
+  </div>
+  <div class="col-4">
+    <p class="text-muted question_comment-date"><%= display_date(question_comment) %></p>
+  </div>
+  <div class="col-12">
+    <p><%= question_comment.body %></p>
+  </div>
+</div>
