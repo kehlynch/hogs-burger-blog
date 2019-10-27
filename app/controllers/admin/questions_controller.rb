@@ -1,6 +1,4 @@
 class Admin::QuestionsController < Admin::BaseController
-  include HttpAuthConcern
-
   def index
     @questions = Question.all
   end
