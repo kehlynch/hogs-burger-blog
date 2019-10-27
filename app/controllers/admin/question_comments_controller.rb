@@ -14,7 +14,7 @@ class Admin::QuestionCommentsController < Admin::BaseController
   def create
     @question = Question.find(params[:question_id])
     @question_comment = @post.question_comments.create(question_comment_params)
-    redirect_to home_path
+    redirect_to admin_questions_path(@question)
   end
 
   private

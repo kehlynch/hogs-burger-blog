@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to home_path
+    redirect_to posts_path
   end
 
   private
